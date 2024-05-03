@@ -1,6 +1,6 @@
 ---
 title: "Ressurection of an RC car"
-date: 2024-04-03T19:30:00+01:00
+date: 2024-05-03T22:30:00+01:00
 description: "Resurrecting a +10 year old rc car from my childhood."
 tags: ["hardware"]
 type: post
@@ -8,7 +8,9 @@ weight: 0
 showTableOfContents: true
 ---
 
-## How is it built?
+## How to resurrect an RC car?
+
+Here's a short story / post about me rebuilding an old RC car.
 
 ### All parts used
 
