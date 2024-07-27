@@ -53,6 +53,6 @@ My first attempt at making a rendering engine using Vulkan as its graphical API.
 ![justanengineer](/images/justanengineer.png)
 An entry for the [Bored Pixels Game Jam 8](https://itch.io/jam/bored-pixels-jam-8). 32nd place in the "immersion" category, 56th place overall.
 
-## [Ball's Journey: Into Space](https://play.google.com/store/apps/details?id=com.anwitch.ballsjourney)
+## [Ball's Journey: Into Space](http://gamewin221.github.io/posts/the_retirement_of_my_game/)
 ![ballsjourney](/images/ballsjourney.png)
-My own game I released on the Google Play store. One of my most polished projects.
+My own mobile game I released on the Google Play store (it has been moved). The most polished and feature-complete game I've made so far.
