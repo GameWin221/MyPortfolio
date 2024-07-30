@@ -4,9 +4,24 @@ type: page
 ---
 
 All my projects in chronological order.
-You can find all of them on [my GitHub profile](https://github.com/GameWin221).
+
+Check them out on [my GitHub profile](https://github.com/GameWin221) and see the best pinned projects.
 
 # *- 2024 -*
+## [x86 64-bit Assembly Raycaster](https://github.com/GameWin221/x64Raycast)
+![asm_raycaster](/images/raycaster.gif)
+Raycasting renderer made fully in x86 Assembly without the standard library on x64 Windows.
+
+It's a partial implementation of [Lode Vandevenne's Raycasting Tutorial](https://lodev.org/cgtutor/raycasting.html).
+
+The goal of this project was to learn more about x86 Assembly, low-level optimization tricks and really basic SIMD.
+
+## [WS2812B Pico Display](https://github.com/GameWin221/PicoWS2812B)
+![ws2812b_display](/images/ws2812b.jpg)
+16x16 WS2812B matrix display controlled via Wi-Fi TCP socket with a Raspberry Pi Pico W. 
+
+It's both a usable decoration for my room and a project to learn more about embedded-specific things (lwip TCP networking, flash memory, timers, etc.)
+
 ## [Resurrecting an RC Car](http://gamewin221.github.io/posts/ressurection_of_an_rc_car/)
 ![resurrected_rc](/images/rccar.png)
 A fun idea I got after my dad had found my old (10+ years old) RC car. Turns out that [making an RC car almost from scratch](http://gamewin221.github.io/posts/ressurection_of_an_rc_car/) is not that hard...
