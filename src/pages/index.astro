@@ -11,6 +11,12 @@ import SocialLinks from '../components/SocialLinks.astro';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				min-height: 100vh;
+			}
 			main {
 				display: flex;
 				flex-direction: column;
@@ -27,7 +33,14 @@ import SocialLinks from '../components/SocialLinks.astro';
 				margin-bottom: 1.35rem;
 			}
 			img {
+				max-height: 20em;
+				width: auto;
 				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 960px) {
+				img {
+					max-height: 16em;
+				}
 			}
 		</style>
 	</head>
@@ -48,11 +61,8 @@ import SocialLinks from '../components/SocialLinks.astro';
 				<p>Speaking of low-level languages I can also read and write basic x64-x86 assembly. For other side-projects I use C# and Python.</p>
 				<p>Besides making software I also make some small IOT and Embedded projects. You can find them either in the posts or in the projects page.</p>
 			</div>
-
-			<div class="spacer"/>
-
-			<h4>Check out <a href="/blog"><b>Blog</b></a> / <a href="/projects"><b>Projects</b></a>!</h4>
 		</main>
+
 		<Footer />
 	</body>
 	<script>

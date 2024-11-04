@@ -25,6 +25,8 @@ const { title, description, published, cover } = Astro.props;
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				max-height: 40em;
+				width: auto;
 			}
 			.prose {
 				width: 960px;
@@ -42,6 +44,12 @@ const { title, description, published, cover } = Astro.props;
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
+			}
+			@media (max-width: 960px) {
+				img {
+					max-height: 18em;
+					width: auto;
+				}
 			}
 		</style>
 	</head>
