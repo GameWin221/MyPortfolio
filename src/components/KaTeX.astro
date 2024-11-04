@@ -1,0 +1,13 @@
+---
+import katex from 'katex';
+
+interface Props {
+	fmt: string;
+    display?: boolean;
+}
+
+const { fmt, display } = Astro.props;
+const result = katex.renderToString(fmt, { displayMode: display, output: "mathml" });
+---
+
+<Fragment class="math" set:html={result}/>

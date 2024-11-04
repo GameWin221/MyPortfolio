@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+                text-align: center;
+                height: 87vh;
+			}
+		</style>
+	</head>
+	<body>
+		<Navbar/>
+		<main>
+			<h1>Oops!</h1>
+            <br>
+            <h2>Seems like you got lost...</h2>
+            <br><br>
+            <h5>Are you looking for these?</h5>
+			<h4><a href="/"><b>Home</b></a> / <a href="/blog"><b>Blog</b></a> / <a href="/projects"><b>Projects</b></a></h4>
+		</main>
+		<Footer />
+	</body>
+</html>

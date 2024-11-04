@@ -1,0 +1,309 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import ScrollToTop from '../components/ScrollToTop.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+			}
+			ul {
+				display: flex;
+				flex-direction: column;
+				list-style-type: none;
+				align-items: center;
+				gap: 2rem;
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul li {
+				width: 100%;
+			}
+			ul li * {
+				transition: 0.2s ease;
+			}
+			ul li img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			.desc {
+				color: var(--main-text-color);
+			}
+
+			.title,
+			.date {
+				margin: 0;
+				color: var(--accent)
+			}
+
+			ul li > a {
+				text-decoration: none;
+			}
+
+			ul li a:hover h3,
+			ul li a:hover h4,
+			ul li a:hover h5,
+			ul li a:hover h6 {
+				color: var(--accent-light);
+			}
+
+			ul a img {
+				max-height: 24em;
+				width: auto;
+				box-shadow: var(--box-shadow);
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow-accent);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Navbar />
+		<main>
+			<section>
+				<ul>
+					<li style="text-align: center;">
+						<h2>2024</h2>
+					</li>
+					<li>
+						<a href='/'>
+							<img src="/images/newwebsite.png" alt="newwebsite" />
+							<h3 class="title">This Website</h3>
+							<h5 class="date">2024</h5>
+						</a>
+						<div class="desc">
+							<p>After a long time of using <a href="https://gohugo.io/">Hugo</a> I decided to make my own website using <a href="https://astro.build/">Astro</a>. This website is heavily based off of the <a href="https://astro.new/latest/">official blog template</a> as you may have noticed ;)</p>
+							<p>Having a custom website allows me to fine-tune every detail, make dynamic elements and experiment here with things like WebGL or WebGPU.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/SIMDRasterizer'>
+							<img src="/images/simdrasterizer.gif" alt="simdrasterizer" />
+							<h3 class="title">SIMD Rasterizer</h3>
+							<h5 class="date">2024</h5>
+						</a>
+						<div class="desc">
+							<p>A week-long project to learn a bit about SIMD and software rasterization. Instead of triangles it uses "Patches" which makes the rasterization much faster and also produces cool-looking geometry.</p>
+							<p>Also, it proved that MSVC is not that good at auto-vectorisation... <a href="https://github.com/GameWin221/SIMDRasterizer?tab=readme-ov-file#benchmarks">Take a look at the <b>Benchmarks</b> section</a></p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://gamewin221.itch.io/gravity-assist'>
+							<img src="/images/gravityAssistCover.png" alt="gravityassist" />
+							<h3 class="title">Gravity Assist</h3>
+							<h5 class="date">2024</h5>
+						</a>
+						<div class="desc">
+							<p>Game made by me and my friend in 96 hours for the <a href="https://itch.io/jam/gmtk-2024">2024 GMTK Game Jam</a>.</p>
+							<p>The theme was <b>"BUILT TO SCALE"</b> so the main goal of the game was to reach a space station by scaling nearby planets. The bigger the planet was, the stronger its gravity got. The game got it's name from an actual <a href="https://en.wikipedia.org/wiki/Gravity_assist">maneuver performed to change the direction and speed of a spacecraft, usually to save propellant</a>.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/x64Raycast'>
+							<img src="/images/raycaster.gif" alt="raycaster" />
+							<h3 class="title">x86 64-bit Assembly Raycaster</h3>
+							<h5 class="date">2024</h5>
+						</a>
+						<div class="desc">
+							<p>Raycasting renderer made fully in x86 Assembly without the standard library on x64 Windows.</p>
+
+							<p>It's a partial implementation of <a href="https://lodev.org/cgtutor/raycasting.html">Lode Vandevenne's Raycasting Tutorial</a>.</p>
+
+							<p>The goal of this project was to learn more about x86 Assembly, low-level optimization tricks and really basic SIMD.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/PicoWS2812B'>
+							<img src="/images/ws2812b.jpg" alt="ws2812b" width="720px"/>
+							<h3 class="title">WS2812B Pico Display</h3>
+							<h5 class="date">2024</h5>
+						</a>
+						<div class="desc">
+							<p>16x16 WS2812B matrix display controlled via Wi-Fi TCP socket with a Raspberry Pi Pico W. </p>
+
+							<p>It's both a usable decoration for my room and a project to learn more about embedded-specific things (lwip TCP networking, flash memory, timers, etc.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='/blog/resurrection_of_an_rc_car/'>
+							<img src="/images/rccar.png" alt="resurrected_rc" />
+							<h3 class="title">Resurrecting an RC Car</h3>
+							<h5 class="date">2024</h5>
+						</a>
+						<div class="desc">
+							<p>A fun idea I got after my dad had found my old (10+ years old) RC car. Turns out that <a href="/blog/resurrection_of_an_rc_car/">making an RC car almost from scratch</a> is not that hard...</p>
+						</div>
+					</li>
+					
+					<div class="spacer"/>
+
+					<li style="text-align: center;">
+						<h2>2023</h2>
+					</li>
+
+					<li>
+						<a href='https://github.com/GameWin221/PicoGameConsole'>
+							<img src="/images/picogameconsole2.png" alt="pico_game_console2" />
+							<h3 class="title">Pico Game Console 2</h3>
+							<h5 class="date">2023-2024</h5>
+						</a>
+						<div class="desc">
+							<p>A much-improved version of the previous generation game console, now with a custom PCB. Still powered with Raspberry Pi Pico!</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/Gemino'>
+							<img src="/images/EarlyGPUOcclusionCullingTests2.png" alt="gemino" />
+							<h3 class="title">Gemino</h3>
+							<h5 class="date">2023-Now</h5>
+						</a>
+						<div class="desc">
+							<p>Designed to be a high performance gpu-driven rendering engine with dynamic applications in mind (such as games).</p>
+
+							<p>It's also my passion project for learning and experimenting with new graphics programming concepts.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/PicoGameConsole'>
+							<img src="/images/picogameconsole.png" alt="pico_game_console" />
+							<h3 class="title">Pico Game Console</h3>
+							<h5 class="date">2023</h5>
+						</a>
+						<div class="desc">
+							<p>My game console powered by Raspberry Pi Pico and an ST7735 LCD display.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/rusticle_sim'>
+							<img src="https://user-images.githubusercontent.com/72656547/213253052-80e923ca-bf12-468b-8061-5dea9737a4b3.png" alt="rusticle_sim" />
+							<h3 class="title">Rusticle Sim</h3>
+							<h5 class="date">2023</h5>
+						</a>
+						<div class="desc">
+							<p>Particle Life simulation made in Rust.</p>
+
+							<p>I made this project after I got inspired by <a href="https://www.youtube.com/watch?v=p4YirERTVF0">this great video by Tom Mohr</a>.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/oxi-trace'>
+							<img src="/images/oxitrace.png" alt="oxitrace" />
+							<h3 class="title">OxiTrace</h3>
+							<h5 class="date">2023</h5>
+						</a>
+						<div class="desc">
+							<p>OxiTrace is a raytracer I made with Rust and Ash (Vulkan API for Rust).</p>
+
+							<p>It's basically a partial implementation of the amazing tutorial: <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing In One Weekend</a>.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li style="text-align: center;">
+						<h2>2022</h2>
+					</li>
+
+					<li>
+						<a href='https://gamewin221.itch.io/dice-fighter'>
+							<img src="/images/dicefighter.png" alt="dicefighter" />
+							<h3 class="title">Dice Fighter</h3>
+							<h5 class="date">2022</h5>
+						</a>
+						<div class="desc">
+							<p>OxiTrace is a raytracer I made with Rust and Ash (Vulkan API for Rust).</p>
+
+							<p>It's basically a partial implementation of the amazing tutorial: <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing In One Weekend</a>.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='https://github.com/GameWin221/Eruption-Engine'>
+							<img src="https://user-images.githubusercontent.com/72656547/182173442-0d863f3c-ef96-4ec9-ab1b-0ae1a62b3b4e.jpg" alt="eruptionengine" />
+							<h3 class="title">Eruption Engine</h3>
+							<h5 class="date">2022</h5>
+						</a>
+						<div class="desc">
+							<p>My first attempt at making a rendering engine using Vulkan as its graphical API. Ended up as a wannabe-game-engine which I spent <b><i>a lot</i></b> of time on.</p>
+						</div>
+					</li>
+	
+					<div class="spacer"/>
+
+					<li style="text-align: center;">
+						<h2>2021</h2>
+					</li>
+
+					<li>
+						<a href='https://gamewin221.itch.io/just-an-engineer'>
+							<img src="/images/justanengineer.png" alt="justanengineer" />
+							<h3 class="title">Just An Enginner</h3>
+							<h5 class="date">2021</h5>
+						</a>
+						<div class="desc">
+							<p>An entry for the Bored Pixels Game Jam 8. 32nd place in the "immersion" category, 56th place overall.</p>
+						</div>
+					</li>
+
+					<div class="spacer"/>
+
+					<li>
+						<a href='blog/the_retirement_of_my_game'>
+							<img src="/images/ballsjourney.png" alt="ballsjourney" />
+							<h3 class="title">Ball's Journey: Into Space</h3>
+							<h5 class="date">2021</h5>
+						</a>
+						<div class="desc">
+							<p>My own mobile game I released on the Google Play store (it has been moved).</p>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</main>
+
+		<ScrollToTop/>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,89 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.my-name {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+			.my-role {
+				color: var(--accent);
+				margin-bottom: 1.35rem;
+			}
+			img {
+				box-shadow: var(--box-shadow);
+			}
+		</style>
+	</head>
+	<body>
+		<Navbar/>
+		<main>
+			<img src="/images/profile.png" alt="Profile picture"/>
+			<h2 class="my-name">Mateusz Antkiewicz</h2>
+			<h5 class="my-role">_</h5>
+			<SocialLinks/>
+
+			<div class="spacer"/>
+
+			<h4>Let me introduce myself</h4>
+			<div class="introduce-myself">
+				<p>I'm passionate about graphics and GPU programming. Anything that is visual, fast or low-level is most likely my area of interest.</p>
+				<p>On a daily basis I use C++. It's the language I'm the most experienced and comfortable with however I also really enjoy Rust.</p>
+				<p>Speaking of low-level languages I can also read and write basic x64-x86 assembly. For other side-projects I use C# and Python.</p>
+				<p>Besides making software I also make some small IOT and Embedded projects. You can find them either in the posts or in the projects page.</p>
+			</div>
+
+			<div class="spacer"/>
+
+			<h4>Check out <a href="/blog"><b>Blog</b></a> / <a href="/projects"><b>Projects</b></a>!</h4>
+		</main>
+		<Footer />
+	</body>
+	<script>
+		const myRoles = ['Graphics Programmer', 'C++ Enjoyer', 'GPU Tinkerer', 'Occasional Rustacean', 'Embedded Hobbyist', 'Low Level Enthusiast', 'Is anyone here?'];
+		const roleElement = document.getElementsByClassName('my-role')[0] as HTMLParagraphElement;
+		
+		var displayedText = ''
+
+		function typeRole(roleID: number, direction: number, letterID: number = 0) {
+			const text = myRoles[roleID];
+			if (letterID === text.length) {
+				setTimeout(() => typeRole( roleID, -direction, letterID - direction), 3000)
+			} else if(letterID < 0) {
+				setTimeout(() => typeRole((roleID + 1) % myRoles.length, -direction, letterID - direction), 50)
+			} else {
+				if (direction === 1) {
+					displayedText += text[letterID];
+				} else if (direction === -1) {
+					displayedText = displayedText.substring(0, displayedText.length - 1);
+				}
+
+				if(letterID < text.length - 1) {
+					roleElement.textContent = displayedText + '|';
+				} else {
+					roleElement.textContent = displayedText;
+				}
+
+				setTimeout(() => typeRole(roleID, direction, letterID + direction), 50)
+			}
+		}
+
+		typeRole(0, 1)
+	</script>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "newblog",
+  "type": "module",
+  "version": "1.2.3",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.8",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/sitemap": "^3.2.1",
+    "@types/katex": "^0.16.7",
+    "astro": "^4.16.5",
+    "katex": "^0.16.11",
+    "mdast-util-to-string": "^4.0.0",
+    "typescript": "^5.6.3"
+  }
+}
